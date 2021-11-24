@@ -14,7 +14,7 @@ class IssueParserTest {
     @Test
     void testParseIssueWithValidJson() throws IOException {
         IssueParser parser = new IssueParser();
-        String json = Files.readAllLines(Paths.get("C:\\Git\\All-others\\Software-Studio\\github-issues-5930-f21-rfilinge\\src\\test\\resources\\sample-output.txt")).get(0); 
+        String json = Files.readAllLines(Paths.get("src\\test\\resources\\sample-output.txt")).get(0); 
         
         List<Issue> issues = parser.parseIssues(json);
         assertNotNull(issues);
@@ -34,6 +34,8 @@ class IssueParserTest {
         assertEquals("This is our new issue", issue1.getBody());
         assertEquals("ms-O", user.getLogin());
         assertEquals("open", issue1.getState());
+        
+        
         
         assertEquals(null,issue1.getClosedAt());
         

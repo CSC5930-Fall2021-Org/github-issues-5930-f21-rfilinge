@@ -12,8 +12,6 @@ public class GitHubRestClient {
                 .header("Authorization", "Bearer " + token)
                 .asString()
                 .getBody();
-
-        System.out.println(responseBody);
         return responseBody;
     }
 

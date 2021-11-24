@@ -106,7 +106,7 @@ class IssueTest {
         issue.setUser(creator);
         issue.setAssignee(assignee);
         
-        assertEquals("Issue [number=1, id=55, state=closed, title=issue 1, body=first issue, createdAt=" + start + ", closedAt=" + end + ", user=" + creator.getLogin() + ", assignee=" + assignee.getLogin() + "]",issue.toString());
+        assertEquals("Issue [number=1, id=55, state=closed, title=issue 1, body=first issue, createdAt=" + start + ", closedAt=" + end + ", user=" + creator.getLogin() + ", assignee=" + assignee + "]",issue.toString());
     }
     
     

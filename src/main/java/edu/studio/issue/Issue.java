@@ -91,8 +91,8 @@ public class Issue {
     @Override
     public String toString() {
         return "Issue [number=" + number + ", id=" + id + ", state=" + state + ", title=" + title + ", body=" + body
-                + ", createdAt=" + createdAt + ", closedAt=" + closedAt + ", user=" + user.getLogin() + ", assignee=" + assignee.getLogin()
-                + "]";
+                + ", createdAt=" + createdAt + ", closedAt=" + closedAt + 
+                ", user=" + user.getLogin() + ", assignee=" + assignee + "]";
     }
     
     
