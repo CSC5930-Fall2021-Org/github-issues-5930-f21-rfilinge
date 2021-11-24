@@ -10,8 +10,14 @@ public class IssueExporter {
 
     public static void main(String args[]) throws IOException
     {
+        IssueExporter export = new IssueExporter();
         
-        if(args.length==0 || args[0].isEmpty())
+        if(args.length==0)
+        {
+            System.out.println("This personal access token is invalid");
+
+        }               
+        if(export.isArgsValid(args[0])==false)
         {
             System.out.println("This personal access token is invalid");
         }
@@ -19,25 +25,41 @@ public class IssueExporter {
         {
             String PAT = args[0];
             GitHubRestClient client = new GitHubRestClient();
-            String listOfIssues = client.getIssues(PAT);
+            String listOfIssues = export.removeNewLines(client.getIssues(PAT));
+            //added to fit issue entirely on one line, as there was an issue with newLines
             
             IssueParser parser = new IssueParser();
             List<Issue> issues = parser.parseIssues(listOfIssues);
-            
-            File file = new File("src/main/resources/actual-issues.txt");
-            // creates the file
-            file.createNewFile();
-            // creates a FileWriter Object 
             FileWriter myWriter = new FileWriter("src/main/resources/actual-issues.txt");
             
             for(int x=0;x<issues.size();x++)
             {
-                System.out.println(issues.get(x).toString());
-                String a = issues.get(x).toString();
                 myWriter.write(issues.get(x).toString() + "\n");
                 myWriter.flush();
             }
             myWriter.close();
         }
     }
+
+    public boolean isArgsValid(String argument) 
+    {
+        if(argument.isEmpty())
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    public String listOfIssues(GitHubRestClient client, String pat)
+    {
+        return client.getIssues(pat);
+    }
+    public String removeNewLines(String old)
+    {
+        old = old.replace("\\r\\n", "(next line)");
+        return old;
+    }
+    
+    
+    
 }

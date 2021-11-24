@@ -1,0 +1,4 @@
+Issue [number=4, id=1044979109, state=open, title=minimal fields, body=null, createdAt=Thu Nov 04 16:47:23 EDT 2021, closedAt=null, user=ms-O, assignee=null]
+Issue [number=3, id=1042639334, state=open, title=New one added via POST, body=This is our new issue, createdAt=Tue Nov 02 17:37:34 EDT 2021, closedAt=null, user=ms-O, assignee=null]
+Issue [number=2, id=1038774698, state=closed, title=A second issue, body=Something doesn't work, createdAt=Thu Oct 28 17:47:17 EDT 2021, closedAt=Thu Oct 28 17:47:43 EDT 2021, user=ms-O, assignee=null]
+Issue [number=1, id=1038569375, state=open, title=A first issue's title, body=This is the description of the issue.(next line)(next line)More details go here., createdAt=Thu Oct 28 14:12:03 EDT 2021, closedAt=null, user=ms-O, assignee=edu.studio.issue.User@173b5de]
