@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.BufferedWriter;
+
 
 public class IssueExporter {
 
@@ -30,7 +32,7 @@ public class IssueExporter {
             
             IssueParser parser = new IssueParser();
             List<Issue> issues = parser.parseIssues(listOfIssues);
-            FileWriter myWriter = new FileWriter("src/main/resources/actual-issues.txt");
+            BufferedWriter myWriter = new BufferedWriter(new FileWriter("actual-issues.txt"));
             
             for(int x=0;x<issues.size();x++)
             {
